@@ -1,0 +1,232 @@
+/* =============================
+   Reset & Global Styles
+   ============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Flex utility */
+.flex {
+  display: flex;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+/* =============================
+   Sidebar
+   ============================= */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #1f2937;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.sidebar h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #14b8a6;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sidebar nav a:hover {
+  background-color: #111827;
+  color: #14b8a6;
+}
+
+.sidebar nav a.active {
+  background-color: #14b8a6;
+  color: white;
+  font-weight: 600;
+}
+
+/* =============================
+   Topbar
+   ============================= */
+.topbar {
+  height: 64px;
+  width: calc(100% - 250px);
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  position: fixed;
+  top: 0;
+  left: 250px;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+.topbar h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.topbar .admin {
+  font-weight: 500;
+  color: #555;
+}
+
+/* =============================
+   Page Wrapper / Content
+   ============================= */
+.page-wrapper {
+  margin-left: 250px;
+  padding: 100px 30px 30px 30px; /* top padding for topbar */
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  transition: all 0.3s ease;
+}
+
+/* =============================
+   Cards
+   ============================= */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* =============================
+   Tables
+   ============================= */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.table th, .table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+/* =============================
+   Buttons
+   ============================= */
+.button {
+  padding: 10px 20px;
+  background-color: #14b8a6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  background-color: #0f766e;
+}
+
+/* =============================
+   Responsive Adjustments
+   ============================= */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .topbar {
+    width: calc(100% - 200px);
+    left: 200px;
+  }
+
+  .page-wrapper {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Sidebar becomes top drawer */
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+  }
+
+  .sidebar h1 {
+    display: none; /* hide logo text on mobile */
+  }
+
+  .sidebar nav a {
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+
+  /* Topbar full width */
+  .topbar {
+    width: 100%;
+    left: 0;
+    padding: 0 15px;
+  }
+
+  /* Page wrapper full width */
+  .page-wrapper {
+    margin-left: 0;
+    padding-top: 80px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Cards full width */
+  .card {
+    padding: 15px;
+  }
+
+  /* Tables responsive */
+  .table th, .table td {
+    padding: 10px;
+  }
+}
