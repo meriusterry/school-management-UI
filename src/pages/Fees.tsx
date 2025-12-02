@@ -7,7 +7,7 @@ export default function Fees() {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-6">Fees</h1>
-      <table className="table">
+      <table className="table w-full">
         <thead>
           <tr>
             <th>Student</th>
