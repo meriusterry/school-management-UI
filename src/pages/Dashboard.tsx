@@ -6,8 +6,8 @@ export default function Dashboard() {
         Welcome to the School Management System! Here is a quick overview.
       </p>
 
-      <div className="flex gap-6 flex-wrap">
-        <div className="card w-64">
+      <div className="flex flex-wrap">
+        <div className="card w-64 gap-10 ">
           <h2 className="font-bold text-lg">Total Students</h2>
           <p className="text-2xl mt-2">120</p>
         </div>
